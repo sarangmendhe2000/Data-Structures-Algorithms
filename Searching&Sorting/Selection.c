@@ -1,0 +1,41 @@
+#include<stdio.h>
+int main()
+{
+    int n,i,j,temp;
+    int A[100];
+    printf("Enter number of elements in array :");
+    scanf("%d",&n);
+    printf("\nEnter value of elements :");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&A[i]);
+    }
+    printf("\nUnsorted Array :\n");
+    for(i=0;i<n;i++)
+    {
+        printf("%d  ",A[i]);
+    }
+    for(i=0;i<n-1;i++)
+    {
+        int min=i;
+        for(j=i+1;j<n;j++)
+        {
+           if(A[j]<A[min])
+          { 
+            min=j;
+          }
+        }
+        if(min!=i)
+        {
+           temp=A[i];
+           A[i]=A[min];
+           A[min]=temp;
+        }
+    }
+    printf("\n\nSorted Array :\n");
+    for(j=0;j<n;j++)
+    {
+        printf("%d  ",A[j]);
+    }
+    return 0;
+}
